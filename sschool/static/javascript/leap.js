@@ -106,6 +106,8 @@ Leap.loop(controllerOptions, function(frame) {
 					one.style.opacity = "1";
 					two.style.opacity="0.2";
 					three.style.opacity = "0.2";
+					left.style.opacity="0.2";
+					right.style.opacity="0.2";
 				
 				}
 			
