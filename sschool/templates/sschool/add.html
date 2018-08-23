@@ -1,0 +1,32 @@
+{% extends 'blog/index.html' %} 
+{% block 'content' %}
+<div class="content container">
+            <div class="top">
+            	{%ifequal data.breaker "+1" %}<div class="one">정지</div>
+                {%else%}<div class="one black">정지</div>
+                {%endifequal%}
+                {%ifequal data.backward "+1" %}<div class="two">후진</div>
+                {%else%}<div class="two black">후진</div>
+                {%endifequal%}
+                {%ifequal data.forward "+1" %}<div class="three">전진</div>
+                {%else%}<div class="three black">전진</div>
+                {%endifequal%}
+            </div>
+        	<div class="bottom">
+        		{%if "-" in data.direction %}
+        		<div class="direction left"></div>
+        		<div class="direction vel"><h1>10km/h</h1></div>
+        		<div class="direction right black"></div>
+                {%elif "+" in data.direction %}
+                <div class="direction left black"></div>
+                <div class="direction vel"><h1>10km/h</h1></div>
+                <div class="direction right"></div>
+                {%else%}
+                <div class="direction left black"></div>
+                <div class="direction vel"><h1>{{data.speed}}</h1></div>
+                <div class="direction right black"></div>
+                {%endif%}              
+                
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+
+{% load static %}
+{% with "Speed" as speed %}     
+<html lang='ko'>
+    <head>
+    	<meta charset="utf-8">
+        <title>S-SCHOOL</title>
+        <link href='//fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/sschool.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">S-SCHOOL</a></h1>
+        </div>
+        {%block 'content'%}
+        {%endblock%}
+        <!--
+        <div class="content container">
+            <div class="top">
+            	{%ifequal data.breaker "+1" %}<div class="one">정지</div>
+                {%else%}<div class="one black">정지</div>
+                {%endifequal%}
+                {%ifequal data.backward "+1" %}<div class="two">후진</div>
+                {%else%}<div class="two black">후진</div>
+                {%endifequal%}
+                {%ifequal data.forward "+1" %}<div class="three">전진</div>
+                {%else%}<div class="three black">전진</div>
+                {%endifequal%}
+            </div>
+        	<div class="bottom">
+        		{%if "-" in data.direction %}
+        		<div class="direction left"></div>
+        		<div class="direction vel"><h1>10km/h</h1></div>
+        		<div class="direction right black"></div>
+                {%elif "+" in data.direction %}
+                <div class="direction left black"></div>
+                <div class="direction vel"><h1>10km/h</h1></div>
+                <div class="direction right"></div>
+                {%else%}
+                <div class="direction left black"></div>
+                <div class="direction vel"><h1>{{data.speed}}</h1></div>
+                <div class="direction right black"></div>
+                {%endif%}              
+                
+            </div>
+        </div>
+        <div class="full">
+            <div class="top">
+               <div class="one black">정지</div>
+               <div class="two black">후진</div>
+               <div class="three">전진</div>
+            </div>
+        	<div class="bottom">
+               <div class="direction left" ></div>
+               <div class="direction vel"><h1>10km/h</h1></div>
+               <div class="direction right"></div>
+            </div>
+        </div>
+        -->
+   
+    </body>
+</html>
+{% endwith %}
